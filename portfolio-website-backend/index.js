@@ -44,6 +44,7 @@ const projects = [
 ];
 
 app.use(cors())
+app.use(express.static('dist'))
 
 app.get('/', (request, response) => {
   response.send('Hello World')
@@ -59,4 +60,7 @@ app.get('/api/projects/:id', (request, response) => {
   response.json(project)
 })
 
-app.listen(3001)
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
