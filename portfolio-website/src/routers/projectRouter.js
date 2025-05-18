@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const getAll = () => {
-	const response = axios.get('http://localhost:3001/api/projects')
+	const response = axios.get('/api/projects')
 
 	return response
 }
