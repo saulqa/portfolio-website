@@ -15,7 +15,6 @@
 <li> Responsive design for desktop and mobile</li>
 <li> Dynamic project showcase with descriptions and links</li>
 <li> Contact form with email notifications</li>
-<li>Admin panel for content management (if applicable)</li>
 </ul>
 
 <h1>Installation</h1>
