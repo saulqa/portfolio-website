@@ -1,6 +1,11 @@
-const Projects = (props) => {
+import { Link } from 'react-router-dom';
 
-	const containerForProjects = {
+const Projects = (props) => {
+const componentContainer = {
+	marginLeft:'20vw',
+	marginRight:'20vw'
+}
+	const projectsContainer = {
 		display:'flex',
 		flexDirection:'row',
 		gap:'10px',
@@ -16,16 +21,25 @@ const Projects = (props) => {
 		height:'20vw',
 	}
 
+	const projectThumbnail = {
+		border: '1px solid black',
+		display:'flex',
+		flexDirection:'column',
+		flexGrow:1, 
+		justifyContent:'center', 
+		alignItems:'center'
+	}
+
 	return(
-		<div style = {{marginLeft:'20vw',marginRight:'20vw'}}>
+		<div style = {componentContainer}>
 		<h1>Projects</h1>
-		<div style ={containerForProjects}>
+		<div style ={projectsContainer}>
 		{props.projects.map((project, index) => {
 			return (
-				<div key = {index} style = {projectItem}>
-				<div style = {{	border: '1px solid black', display:'flex',flexDirection:'column',flexGrow:1, justifyContent:'center', alignItems:'center'}}>{project.thumbnail}</div>
+				<Link key = {index} style = {projectItem} to={`/${project.url}`}>
+				<div style = {projectThumbnail}>{project.thumbnail}</div>
 				<div>{project.text}</div>
-				</div>
+				</Link>
 				)
 		})}
 		</div>

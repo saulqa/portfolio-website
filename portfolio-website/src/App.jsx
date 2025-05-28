@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Index from './pages/Index'
+import Project from './pages/Project'
+
 import {getAll} from './routers/projectRouter'
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
   const [projects, setProjects] = useState([])
 
@@ -17,7 +19,10 @@ function App() {
 
   return (
     <>
-    <Index projects = {projects}/>
+          <Routes>
+        <Route path="/" element={<Index projects = {projects}/>} />
+        <Route path="/:id" element={<Project projects = {projects} />} />
+      </Routes>
     </>
     )
 }
